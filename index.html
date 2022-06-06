@@ -13,10 +13,33 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-  <header class="jumbotron">
+  <header class="jumbotron container-fluid">
     <h1 class="display-4">Weather Dashboard</h1>
   </header>
-    
+
+  <main class="container">
+    <div class="row">
+      <!-- Left Side of the Page-->
+      <div id="left-side" class="col-md-3">
+        <!-- Search Form -->
+        <form>
+            <label for="search">Search for a City:</label>
+            <div id="search-form" class="form-row">
+                <input id="searched-city" type="text" class="form-control" placeholder="Anywhere, USA">
+                <button id="search-btn" class="btn" type="submit">Search</button>
+            </div>
+        </form>
+        <!-- List of Searched Cities -->
+        <ul id="past-cities" class="list-group mt-4"></ul>
+      </div>
+
+      <!-- Right Side of Page Goes Here-->
+    </div>
+
+  </main>
+  
+
+  <footer><br><br>&copy;Design samAntics 2022</footer>
   <script src="./assets/js/script.js"></script>
 </body>
 </html>

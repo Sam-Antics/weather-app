@@ -17,8 +17,26 @@ body {
   text-align: center;
   background-color: var(--tertiary-clr);
   color: var(--secondary-clr);
-  height: 50px;
+  height: 60px;
   border-bottom: 5px solid var(--quaternary-clr);
   margin-bottom: 10px;
-  padding-top: 0;
+  padding-top: 10px;
+}
+
+#search-form {
+    border-bottom: 1px solid var(--quinary-clr);
+    padding-bottom: 10px;
+}
+#search-btn {
+    width: 100%;
+    margin-top: 10px;
+    background-color: var(--quaternary-clr);
+    color: var(--secondary-clr);
+}
+
+
+
+
+footer {
+  color: var(--quinary-clr);
 }
