@@ -11,6 +11,7 @@ body {
   font: 15px;
   line-height: 1;
   background-color: var(--primary-clr);
+  margin-bottom: 60px;
 }
 
 .jumbotron {
@@ -36,6 +37,9 @@ body {
 
 
 
+.footer {
+height: 60px;
+}
 
 footer {
   color: var(--quinary-clr);
