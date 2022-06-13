@@ -76,8 +76,6 @@ var displayCurrentWeather = function(conditions, location) {
   // display city name from search criteria
   citySearchedEl.textContent = location;
 
-  console.log(conditions, location);
-
   // display the current date
   var currentDate = document.createElement("span")
   currentDate.textContent=" (" + moment(conditions.dt.value).format("MMM D, YYYY") + ") ";
@@ -125,6 +123,24 @@ var getUvIndex = function(lat, lon) {
 
 var displayUv = function(uvIndex) {
   console.log(uvIndex);
+
+  var uvIndexEl = document.createElement("div");
+  uvIndexEl.textContent = "UV Index: "
+  currentContainerEl.appendChild(uvIndexEl);
+
+  var indexNum = document.createElement("span");
+  indexNum.textContent = uvIndex.value;
+
+  // assign CSS classes to the spans to indicate the background colors
+  if (uvIndex.value <= 3) {
+    indexNum.className = "favorable"
+  } else if (uvIndex.value > 3 && uvIndex.value <= 7) {
+    indexNum.className = "moderate"
+  } else {
+    indexNum.className = "severe"
+  };
+
+uvIndexEl.appendChild(indexNum);
 }
 
 // put searched city in localStorage 

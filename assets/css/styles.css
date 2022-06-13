@@ -26,6 +26,7 @@ body {
 #search-form {
     border-bottom: 1px solid var(--quinary-clr);
     padding-bottom: 10px;
+    color: var(--quinary-clr);
 }
 #search-btn {
     width: 100%;
@@ -34,7 +35,25 @@ body {
     color: var(--secondary-clr);
 }
 
+span {
+  line-height: 1.5;
+  padding: 3px;
+}
 
+span.favorable {
+  background-color: green;
+  color: white;
+}
+
+span.moderate {
+  background-color: yellow;
+  color: white;
+}
+
+span.severe {
+  background-color: red;
+  color: white;
+}
 
 .footer {
 height: 60px;
