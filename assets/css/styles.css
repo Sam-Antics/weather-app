@@ -23,6 +23,7 @@ body {
   padding-top: 10px;
 }
 
+
 #search-form {
     border-bottom: 1px solid var(--quinary-clr);
     padding-bottom: 10px;
@@ -59,6 +60,14 @@ span.severe {
   margin: 8px;
   border: 3px;
   background-color: var(--secondary-clr);
+}
+
+#future-weather {
+  margin-top: 5px;
+}
+
+.card-item {
+  flex:auto;
 }
 
 /* .footer {
