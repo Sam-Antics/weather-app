@@ -168,21 +168,21 @@ var displayForecast = function(forecastConditions) {
       futureContainerEl.appendChild(dailyWeatherEl);
 
       // display date on card
-      var weatherDate = document.createElement("h4");
+      var weatherDate = document.createElement("h5");
       weatherDate.textContent = moment.unix(dailyWeather.dt).format("MMM D, YYYY");
       weatherDate.classList = "text-center card-header";
       dailyWeatherEl.appendChild(weatherDate);
 
       // display icon on card
       var weatherIcon = document.createElement("img");
-      weatherIcon.classList = "text-center card-item";
+      weatherIcon.classList = "mx-auto d-block card-item";
       weatherIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + dailyWeather.weather[0].icon + "@2x.png")
       dailyWeatherEl.appendChild(weatherIcon);
 
       // display temp
       var dailyTempEl = document.createElement("span");
       dailyTempEl.classList = "text-center card-item";
-      dailyTempEl.textContent = "Temp: " + dailyWeather.main.temp + " °F"
+      dailyTempEl.textContent = "Temp: " + dailyWeather.main.temp + " °F";
       dailyWeatherEl.appendChild(dailyTempEl);
 
       // display humidity
