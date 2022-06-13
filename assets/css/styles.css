@@ -38,7 +38,10 @@ body {
 
 span {
   line-height: 1.5;
+  margin-left: 5px;
 }
+
+
 
 span.favorable {
   background-color: green;
@@ -63,6 +66,11 @@ span.severe {
 
 #future-weather {
   margin-top: 5px;
+}
+
+.weather-card {
+background-color: var(--quaternary-clr);
+color: var(--secondary-clr);
 }
 
 .card-item {

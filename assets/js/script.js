@@ -164,7 +164,7 @@ var displayForecast = function(forecastConditions) {
       console.log(dailyWeather);
       // create div element for each card
       var dailyWeatherEl = document.createElement("div");
-      dailyWeatherEl.classList = "card m-2";
+      dailyWeatherEl.classList = "card weather-card m-2";
       futureContainerEl.appendChild(dailyWeatherEl);
 
       // display date on card
@@ -181,19 +181,19 @@ var displayForecast = function(forecastConditions) {
 
       // display temp
       var dailyTempEl = document.createElement("span");
-      dailyTempEl.classList = "text-center card-item";
+      dailyTempEl.className = "card-item";
       dailyTempEl.textContent = "Temp: " + dailyWeather.main.temp + " °F";
       dailyWeatherEl.appendChild(dailyTempEl);
 
       // display humidity
       var dailyHumidityEl = document.createElement("span");
-      dailyHumidityEl.classList = "text-center card-item";
+      dailyHumidityEl.className = "card-item";
       dailyHumidityEl.textContent = "Humidity: " + dailyWeather.main.humidity + "%";
       dailyWeatherEl.appendChild(dailyHumidityEl);
 
       // display wind
       var dailyWindEl = document.createElement("span");
-      dailyWindEl.classList = "text-center card-item";
+      dailyWindEl.className = "card-item";
       dailyHumidityEl.textContent = "Wind: " + dailyWeather.wind.speed + " MPH";
       dailyWeatherEl.appendChild(dailyWindEl);
     }
