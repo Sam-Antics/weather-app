@@ -25,13 +25,14 @@ THEN I am again presented with current and future conditions for that city
 
 ## Deployed Website
  https://sam-antics.github.io/weather-app/
-![Deployed website](#)
+![Deployed website](./assets/screenshot.png)
 
 ## Built With
 * HTML
 * CSS
 * Bootstrap
 * JavaScript
+* Moment.js
 * OpenWeather One Call API
 
 
