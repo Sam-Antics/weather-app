@@ -13,11 +13,11 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-  <header class="jumbotron container-fluid">
-    <h1 class="display-4">Weather Dashboard</h1>
+  <header id="jumbotron" class="text-center p-2">
+    <h1>Weather Dashboard</h1>
   </header>
 
-  <main class="container">
+  <main class="container-fluid">
     <div class="row">
       <!-- Left Side of the Page-->
       <div id="left-side" class="col-md-3">
@@ -25,22 +25,27 @@
         <form id="search-form">
             <label for="search">Search for a City:</label>
             <div class="form-row">
-                <input id="searched-city" type="text" class="form-control" placeholder="Anywhere, USA">
+                <input id="searched-city" type="text" class="form-control" placeholder="Washington DC">
                 <button id="search-btn" class="btn" type="submit">Search</button>
             </div>
         </form>
         <!-- List of Searched Cities -->
-        <ul id="past-cities" class="list-group mt-4"></ul>
+        <div id="past-cities" class="list-group mt-4"></div>
       </div>
 
       <!-- Right Side of Page Goes Here-->
       <div id="right-side" class="col-md-9 pt-4">
-          
           <!-- Weather Right Now -->
-          <div id="currentWeather" class="border rounded"></div>
+          <div id="current-weather" class="container">
+            <h2 id="city-searched"></h2>
+            <div id="current-container" class="list-group"></div>
+          </div>
 
           <!-- Five-day Forecast -->
-          <div id="futureWeather" class="mt-5"></div>
+          <div id="future-weather" class="row border">
+            <h2 class="col-12" id="weather-forecast"></h2>
+            <div class="d-flex" id="forcast-container"></div>
+          </div>
       </div>
     </div>
 
@@ -48,6 +53,7 @@
   
 
   <footer class="footer" role="contentinfo"><br><br>&copy;Design samAntics 2022</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 </html>

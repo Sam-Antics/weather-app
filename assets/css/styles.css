@@ -14,8 +14,7 @@ body {
   margin-bottom: 60px;
 }
 
-.jumbotron {
-  text-align: center;
+#jumbotron {
   background-color: var(--tertiary-clr);
   color: var(--secondary-clr);
   height: 60px;
