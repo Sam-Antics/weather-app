@@ -10,10 +10,10 @@
 
 // Global Variables
 var formEl = document.querySelector("#search-form");
-var pastSearchEl = document.querySelector("#past-cities");
 var currentContainerEl = document.querySelector("#current-container");
 var futureContainerEl = document.querySelector("#future-weather");
 var citySearchedEl = document.querySelector("#city-searched");
+var pastCityBtnEl = document.querySelector("#past-cities-btns");
 
 
 // API variables
@@ -65,7 +65,9 @@ var searchFormHandler = function(event) {
   });
   
   // call 'save to localStorage' function
-  saveInfo();
+  // saveInfo();
+
+  pastSearches(city);
 }
 
 // display the current weather
@@ -143,13 +145,45 @@ var displayUv = function(uvIndex) {
 uvIndexEl.appendChild(indexNum);
 }
 
-// put searched city in localStorage 
-var saveInfo = function() {
-  localStorage.setItem("city", JSON.stringify(searchInfo));
+// // put searched city in localStorage to pass to Past Cities area
+// var saveInfo = function() {
+//   localStorage.setItem("city", JSON.stringify(searchInfo));
+// }
+
+// put searched city in Searched Cities area from each search made
+var pastSearches = function(pastCity) {
+  pastCity = pastCity.replace("+", " ");
+  console.log(pastCity);
+
+  var pastCityEl = document.createElement("button")
+  pastCityEl.textContent = pastCity;
+  pastCityEl.classList = "d-flex w-100 border text-center btn p-2";
+  pastCityEl.setAttribute("past-city", pastCity);
+  pastCityEl.setAttribute("type", "submit");
+
+  pastCityBtnEl.prepend(pastCityEl)
 }
+
+var pastSearchesHandler = function(event) {
+  var searchedCity = event.target.getAttribute("past-city");
+  if (searchedCity) {
+    city = searchedCity.replace(" ", "+");
+    queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + apiKey +"&units=imperial";
+    fetch(queryURL)
+      .then(function(response) {
+    response.json().then(function(data) {
+      displayCurrentWeather(data, city);
+    });
+  });
+  }
+}
+
+
 
 // build cards dynamically to show the 5-day forecast
 
 
 // get the search info from the form on button "submit"
 formEl.addEventListener("submit", searchFormHandler);
+// event listener for Past Searches
+pastCityBtnEl.addEventListener("click", pastSearchesHandler);
