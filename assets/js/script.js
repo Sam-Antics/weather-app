@@ -42,7 +42,7 @@ var searchFormHandler = function(event) {
   var city = searchInfo.replace(" ", "+");
   
   // query API
-  var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + apiKey +"&units=imperial";
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + apiKey +"&units=imperial";
   console.log(queryURL);
   
   // make a request to the url
